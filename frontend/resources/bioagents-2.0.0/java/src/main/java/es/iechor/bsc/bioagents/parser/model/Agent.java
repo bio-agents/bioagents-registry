@@ -72,7 +72,7 @@ public class Agent {
         }
         final String agentID = summary.getAgentID();
         final String version = summary.getVersion();
-        return "bio.agents:" + (version == null ? agentID : agentID + ":" + version);
+        return "bioagents.tech:" + (version == null ? agentID : agentID + ":" + version);
     }
     
     @XmlElement(required = true)

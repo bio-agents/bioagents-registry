@@ -54,7 +54,7 @@ public class Credit {
     private RoleType typeRole;
     private String comment;
 
-    @XmlSchemaType(name = "nameType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "nameType", namespace = "http://bioagents.tech")
     public String getName() {
         return name;
     }
@@ -114,7 +114,7 @@ public class Credit {
         this.typeRole = typeRole;
     }
 
-    @XmlSchemaType(name = "textType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "textType", namespace = "http://bioagents.tech")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     public String getComment() {
         return comment;

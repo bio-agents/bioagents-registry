@@ -48,7 +48,7 @@ class PublicationSerializer(serializers.ModelSerializer):
 	metadata = PublicationMetadataSerializer(read_only=True, required=False, many=False)
 
 # TODO: add these to interfaces
-# summary->version == "Version information (typically a version number) of the software applicable to this bio.agents entry."
+# summary->version == "Version information (typically a version number) of the software applicable to this bioagents.tech entry."
 # summary->otherID->version == "Version information (typically a version number) of the software applicable to this identifier."
 # download->version == "Version information (typically a version number) of the software applicable to this download."
 # publication->version == "Version information (typically a version number) of the software applicable to this publication."

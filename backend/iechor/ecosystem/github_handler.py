@@ -644,9 +644,9 @@ class GithubAgentHandler:
     # we can return the repo object and allow for issue creation in some other place
     def create_issue(self, bioagents_data = None, error_message = None):
         self.__repo.create_issue(
-            title = 'Error in ecosystem from bio.agents; agent id: {}'.format(bioagents_data.agent_id),
+            title = 'Error in ecosystem from bioagents.tech; agent id: {}'.format(bioagents_data.agent_id),
             body = '''
-Error in ecosystem from bio.agents:
+Error in ecosystem from bioagents.tech:
 {}
 {}
 '''.format(error_message, bioagents_data.agent_json)

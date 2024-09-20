@@ -1,7 +1,9 @@
-## Installing bio.agents on your system
-The local (development) installation is done via [Docker](https://www.docker.com/). Other than Git (and a text editor), nothing else is required to run and write code for bio.agents. 
+# Installing bioagents.tech on your system
+
+The local (development) installation is done via [Docker](https://www.docker.com/). Other than Git (and a text editor), nothing else is required to run and write code for bioagents.tech.
 
 ## 1. Download and Install Docker
+
 ##### Docker main installation page
 [https://docs.docker.com/install/](https://docs.docker.com/install/)
 > **Note:** You will need to create a [Docker Hub](https://hub.docker.com) account.
@@ -28,20 +30,20 @@ The local (development) installation is done via [Docker](https://www.docker.com
 
 ## 2. Clone the repo
 ##### Using HTTPS
-`git clone https://github.com/bio-agents/bioagentsRegistry.git`
+`git clone https://github.com/bio-agents/bioagents-registry.git`
 
 ##### Using SSH
-`git clone git@github.com:bio-agents/bioagentsRegistry.git`
+`git clone git@github.com:bio-agents/bioagents-registry.git`
 
-Go into the folder in which you cloned the bio.agents repo. By default it will be called `bioagentsRegistry`: (e.g. `cd bioagentsRegistry ` or `cd /home/user/coding/bioagentsRegistry`)
+Go into the folder in which you cloned the bioagents.tech repo. By default it will be called `bioagents-registry`: (e.g. `cd bioagents-registry ` or `cd /home/user/coding/bioagents-registry`)
 
-## 3.0 Inside the bio.agents repo
-> **Note:** The Docker setup will require up to 5 GB of disk space. The bio.agents data will also add to this.
+## 3.0 Inside the bioagents.tech repo
+> **Note:** The Docker setup will require up to 5 GB of disk space. The bioagents.tech data will also add to this.
 
 ##### 3.0.1 Build the necessary Docker images
 `docker-compose build`
 
-The above command will download / build all the Docker images required for bio.agents to run on your local machine. 
+The above command will download / build all the Docker images required for bioagents.tech to run on your local machine.
 
 The images built can be seen by running: `docker image ls` and are:
 
@@ -53,6 +55,7 @@ The images built can be seen by running: `docker image ls` and are:
 * `node` `(~ 650MB)`
 
 ##### 3.0.2 Create and run the Docker containers
+
 `docker-compose up`
 
 The above command will create and run the required containers:
@@ -69,19 +72,23 @@ The above command will create and run the required containers:
 Too see the running containers run: `docker container ls`
 
 ## 3.1 The short(er) setup
-**Run the steps below in the root folder of the Git project (e.g. `bioagentsRegistry`)** 
+
+**Run the steps below in the root folder of the Git project (e.g. `bioagents-registry`)**
 
 ##### 3.1.1 Make migrations
+
 `docker exec bioagents-backend python manage.py makemigrations`
 
 Make Django migrations from the exiting models. Executed on the `bioagents-backend` container. If you get the `No changes detected` message it means that you are up to date.
 
 ##### 3.1.2 Migrate to the DB
+
 `docker exec bioagents-backend python manage.py migrate`
 
-Create necessary tables and other DB objects from the migrations. Executed on the `bioagents-backend` container. If you get the `No migrations to apply.` message it means that you are up to date. 
+Create necessary tables and other DB objects from the migrations. Executed on the `bioagents-backend` container. If you get the `No migrations to apply.` message it means that you are up to date.
 
 ##### 3.1.3 Copy initial (seed) DB
+
 `docker cp initial_db.sql bioagents-mysql:/root`
 
 Copies the `initial_db.sql` SQL file into the `bioagents-mysql` container (where the MySQL database server runs) into the `/root` folder.
@@ -111,7 +118,7 @@ Purges (clears) any data in the Elasticsearch index. Executed in the `bioagents-
 Takes all the agents, subdomains annotations etc. in the DB  and creates the equivalent entries in the Elasticsearch index. Executed in the `bioagents-backend` container.
 
 ##### 3.1.8 Done
-At this point you can go to [http://localhost:8000](http://localhost:8000]) to see the local bio.agents homepage.
+At this point you can go to [http://localhost:8000](http://localhost:8000]) to see the local bioagents.tech homepage.
 
 The `test` subdomain can be viewed at [http://test.localhost:8000](http://test.localhost:8000)
 
@@ -120,7 +127,7 @@ You can login with the existing superuser (user: `bioagents`, password: `bioagen
 
 All running Docker containers can be stopped by running: `docker-compose down` from the root Git folder. This will preserve the data in the MySQL database and Elasticsearch. To reinstantiate everything again run: `docker-compose up`. 
 
-Only need to run `docker-compose build` once at the beginning or if changes are made to the bio.agents Docker settings files.
+Only need to run `docker-compose build` once at the beginning or if changes are made to the bioagents.tech Docker settings files.
 
 If you wish to remove the data along with the containers run: `docker-compose down -v` which will also remove the Docker volumes which preserve the MySQL and Elasticsearch data.
 
@@ -129,7 +136,7 @@ If you wish to remove the data along with the containers run: `docker-compose do
 ## 3.2 The longer setup
 This is an alternative to **3.1** in which some of the steps were contained in the initial DB files. This will start with no data.
 
-**Run the steps below in the root folder of the Git project (e.g. `bioagentsRegistry`)** 
+**Run the steps below in the root folder of the Git project (e.g. `bioagents-registry`)** 
 
 ##### 3.2.1 Make migrations
 `docker exec bioagents-backend python manage.py makemigrations`
@@ -150,7 +157,7 @@ Prompts the creation of a superuser, need to input superuser name, email (option
 ##### 3.2.4 Setup EDAM ontology
 `docker exec bioagents-backend bash /iechor/application/backend/data/edam/update_edam.sh`
 
-Download EDAM ontology and push it to the DB. Can also be used to update to new EDAM version. The file which indicates the EDAM version is `<git_project_root>/backend/data/edam/current_version.txt`, e.g. `bioagentsRegistry/backend/data/edam/current_version.txt`
+Download EDAM ontology and push it to the DB. Can also be used to update to new EDAM version. The file which indicates the EDAM version is `<git_project_root>/backend/data/edam/current_version.txt`, e.g. `bioagents-registry/backend/data/edam/current_version.txt`
 
 
 ##### 3.2.5 Copy helper tables SQL
@@ -179,7 +186,7 @@ Purges (clears) any data in the Elasticsearch index. Executed in the `bioagents-
 Takes all the agents, subdomains annotations etc. in the DB  and creates the equivalent entries in the Elasticsearch index. Executed in the `bioagents-backend` container.
 
 ##### 3.1.10 Done
-At this point you can go to [http://localhost:8000](http://localhost:8000) to see the local bio.agents homepage.
+At this point you can go to [http://localhost:8000](http://localhost:8000) to see the local bioagents.tech homepage.
 
 Login with the user created in **3.2.3**
 
@@ -187,7 +194,7 @@ No agents or subdomains are available, add agents at [http://localhost:8000/regi
 
 All running Docker containers can be stopped by running: `docker-compose down` from the root Git folder. This will preserve the data in the MySQL database and Elasticsearch. To reinstantiate everything again run: `docker-compose up`.
 
-Only need to run `docker-compose build` once at the beginning or if changes are made to the bio.agents Docker settings files.
+Only need to run `docker-compose build` once at the beginning or if changes are made to the bioagents.tech Docker settings files.
 
 If you wish to remove the data along with the containers run: `docker-compose down -v` which will also remove the Docker volumes which preserve the MySQL and Elasticsearch data.
 
@@ -221,7 +228,7 @@ The `bioagents-backend` container is based on an image which uses an Apache serv
 > 
 > `docker exec bioagents-backend /etc/init.d/apache2 reload`
 
-> **Remember** to run the above command whenever you want to see your code changes reflected in your local bio.agents.
+> **Remember** to run the above command whenever you want to see your code changes reflected in your local bioagents.tech.
 
 > Bringing the containers down and up again will also work, but this takes significantly longer. The above command is almost instant.
 
@@ -258,23 +265,23 @@ command in the `bioagents-backend` container.
 ### 4.3 Local email setup
 Important to note that the email system used to send emails regarding account creation and password reset will not work as intended out of the box . 
 
-In order for the emails to work you need to provide credetials (email, password, smtp settings) in the backend/iechorapp/settings.py file. bio.agents production uses Zoho mail (http://zoho.com) which currently works well with our setup. 
+In order for the emails to work you need to provide credetials (email, password, smtp settings) in the backend/iechorapp/settings.py file. bioagents.tech production uses Zoho mail (http://zoho.com) which currently works well with our setup. 
 
-The easy way would be to make a Zoho email account and use that email information to make the email functionality run. Gmail and Yahoo were tried and the connections are blocked by Gmail and Yahoo because of security reasons. This is because Gmail and Yahoo don't accept a simple username-password login and require more strict settings. Feel free to implement this in your bio.agents instance.
+The easy way would be to make a Zoho email account and use that email information to make the email functionality run. Gmail and Yahoo were tried and the connections are blocked by Gmail and Yahoo because of security reasons. This is because Gmail and Yahoo don't accept a simple username-password login and require more strict settings. Feel free to implement this in your bioagents.tech instance.
 
 
 ### 4.4 Docker notes
 
-#### Build bio.agents Docker images
+#### Build bioagents.tech Docker images
 `docker-compose build`
 
-#### Run bio.agents containers
+#### Run bioagents.tech containers
 `docker-compose up`
 
-#### Stop bio.agents containers
+#### Stop bioagents.tech containers
 `docker-compose down`
 
-#### Stop bio.agents containers and remove data
+#### Stop bioagents.tech containers and remove data
 `docker-compose down -v`
 
 
@@ -316,7 +323,7 @@ or
 (will not work if containers are running this image)
 
 #### Enter a container and run commands
-Any of the bio.agents runnning containers can provide a bash terminal to run commands inside the containers (similar to `docker exec`). Examples of the commands are:
+Any of the bioagents.tech runnning containers can provide a bash terminal to run commands inside the containers (similar to `docker exec`). Examples of the commands are:
 
 * `docker exec -it bioagents-mysql bash`
 * `docker exec -it bioagents-elasticsearch bash`
@@ -334,7 +341,7 @@ As an example, to view the info in a MySQL database table run:
 `SELECT * FROM iechor_resource WHERE visibility = 1;`
 
 
-#### bio.agents Docker settings files:
+#### bioagents.tech Docker settings files:
 
 Backend build config file
 

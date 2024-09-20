@@ -67,7 +67,7 @@ public class Contact {
         this.url = url;
     }
 
-    @XmlSchemaType(name = "nameType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "nameType", namespace = "http://bioagents.tech")
     public String getName() {
         return name;
     }

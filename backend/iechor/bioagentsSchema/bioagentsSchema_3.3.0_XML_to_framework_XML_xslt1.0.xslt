@@ -8,7 +8,7 @@ OVERWRITTEN WHEN YOU RE-RUN CODE GENERATION.
 Refer to the Altova MapForce Documentation for further details.
 http://www.altova.com/mapforce
 -->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns0="bioagentsSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="ns0 xs">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ns0="bioagents-schema" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="ns0 xs">
 	<xsl:output method="xml" encoding="UTF-8" indent="yes"/>
 	<xsl:template match="/">
 		<xsl:variable name="var1_initial" select="."/>

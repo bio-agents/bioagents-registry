@@ -1,40 +1,36 @@
-# docker-compose file to setup:
-# - mysql
-# - elasticsearch
-# - backend: depends on mysql and elasticsearch
-# - frontnend: depends on backend
-
-# This file is meant to aid local development and testing. It *must not* be
-# used for production deployment.
-
 version: "3.7"
 
 services:
-
   mysql:
     container_name: bioagents-mysql
     image: mysql:8.0.23
     platform: linux/amd64
-    restart: unless-stopped
+    restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=iechorroot
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=iechor
       - MYSQL_USER=iechor
-      - MYSQL_PASSWORD=123
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     volumes:
       - "data-mysql:/var/lib/mysql"
     ports:
       - "3306:3306"
     networks:
       - net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 
   elasticsearch:
     container_name: bioagents-elasticsearch
     image: elasticsearch:7.12.1
-    restart: unless-stopped
     environment:
-      - xpack.security.enabled=false
+      - xpack.security.enabled=true
       - discovery.type=single-node
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
     volumes:
       - "data-elasticsearch:/usr/share/elasticsearch/data"
     ports:
@@ -42,47 +38,49 @@ services:
       - "9300:9300"
     networks:
       - net
+    healthcheck:
+      test: ["CMD-SHELL", "curl --silent --fail localhost:9200/_cluster/health?wait_for_status=yellow&timeout=50s"]
+      interval: 1m
+      timeout: 20s
+      retries: 3
+      start_period: 40s
 
   backend:
     container_name: bioagents-backend
-    image: bioagents/backend:latest
     build:
       context: ./backend
+      args:
+        - ENV=production
     environment:
       - BIOTOOLS_ELASTIC_SEARCH_URLS=http://elasticsearch:9200
       - BIOTOOLS_MYSQL_DB=iechor
       - BIOTOOLS_MYSQL_HOST=mysql
-      - BIOTOOLS_MYSQL_PASSWORD=123
+      - BIOTOOLS_MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - BIOTOOLS_MYSQL_USER=iechor
     ports:
       - "8000:80"
     networks:
       - net
     depends_on:
-      - mysql
-      - elasticsearch
-    links:
-      - mysql
-      - elasticsearch
+      mysql:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
     volumes:
-      - ./backend:/iechor/application/backend:consistent
-      - ./frontend:/iechor/application/frontend
+      - ./backend:/iechor/application/backend:ro
 
-  # dockerfile in frontend dir
   frontend:
     container_name: bioagents-frontend
-    image: bioagents/frontend:latest
     build:
       context: ./frontend
+      args:
+        - ENV=production
     networks:
       - net
     depends_on:
-       - backend
+      - backend
     volumes:
-      - ./frontend:/home/bioagents/frontend:consistent
-      - bioagents_node_modules:/home/bioagents/frontend/node_modules
-      - bioagents_bower_components:/home/bioagents/frontend/bower_components
-
+      - ./frontend:/home/bioagents/frontend:ro
 
 networks:
   net:
@@ -91,5 +89,3 @@ networks:
 volumes:
   data-mysql: {}
   data-elasticsearch: {}
-  bioagents_node_modules: {}
-  bioagents_bower_components: {}

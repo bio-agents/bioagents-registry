@@ -14,16 +14,16 @@ Instance     | Branch         | Comment
 "hotfixes"   | hotfix/\<id\>  | Always branch off "master"
 
 
-- **"development" branch** (`origin/develop`) (code deployed on https://dev.bio.agents) 
+- **"development" branch** (`origin/develop`) (code deployed on https://dev.bioagents.tech) 
   - the default / base branch of the repo, against which all pull requests and code pushes are automatically made
   - holds changes for the next release
   - developers will branch from / merge to it
-  - accepts pull requests (see [Community Development Guidelines](https://github.com/bio-agents/bioagentsRegistry/blob/master/contribution.md#community-development-guidelines))
+  - accepts pull requests (see [Community Development Guidelines](https://github.com/bio-agents/bioagents-registry/blob/master/contribution.md#community-development-guidelines))
 
-- **"master"** branch (`origin/master`) (code deployed on https://bio.agents) 
+- **"master"** branch (`origin/master`) (code deployed on https://bioagents.tech) 
   - latest code deployed to (and allowing bug fixing of) production system
   - not normally interacted with (other than hot fixes)
-  - periodically updated from "develop" branch (see [Release Process](https://github.com/bio-agents/bioagentsRegistry/blob/master/contribution.md#release-process)
+  - periodically updated from "develop" branch (see [Release Process](https://github.com/bio-agents/bioagents-registry/blob/master/contribution.md#release-process)
 - **"feature"**, **"bug"** and **"hotfix"** branches
   - **"feature"** branches are created for significant new features / enhancements (*i.e.* whose development may take longer than a single deployment) 
   - **"bug"** branches are created to address - in the next deployment - bugs found on the live site (a bug branch typically lasts one deployment cycle only)
@@ -47,52 +47,52 @@ Instance     | Branch         | Comment
     - `hotfix/<id>`
 
 # Governance, roles & responsibilities
-The Danish IECHOR node provides stable funding for bio.agents as part of the IECHOR-DK Service Delivery Plan.  bio.agents strives to be a "do-ocracy", *i.e.* driven primarily on a day-to-day basis by the people most active in developing the software and content, whilst respecting the executive / decision-making power of IECHOR-DK management.  We follow a simple governance model:
+The Danish IECHOR node provides stable funding for bioagents.tech as part of the IECHOR-DK Service Delivery Plan.  bioagents.tech strives to be a "do-ocracy", *i.e.* driven primarily on a day-to-day basis by the people most active in developing the software and content, whilst respecting the executive / decision-making power of IECHOR-DK management.  We follow a simple governance model:
 
-- **bio.agents developer**
+- **bioagents.tech developer**
   - this could be you :)
 
-- **Release Manager** (currently [Hans Ienasescu](mailto:hans@bio.agents) and [Piotr Chmura](mailto:piotr.chmura@cpr.ku.dk))
+- **Release Manager** (currently [Hans Ienasescu](mailto:hans@bioagents.tech) and [Piotr Chmura](mailto:piotr.chmura@cpr.ku.dk))
 
   - can push changes to "master" branch (merging from "develop" or "hotfixes")
   - responsible for:
-    - building the "master" (https://bio.agents) and "develop" (https://dev.bio.agents) deployments, as per the [release process](https://github.com/bio-agents/bioagentsRegistry/blob/master/contribution.md#release-process)
+    - building the "master" (https://bioagents.tech) and "develop" (https://dev.bioagents.tech) deployments, as per the [release process](https://github.com/bio-agents/bioagents-registry/blob/master/contribution.md#release-process)
 
 
-- **Community Leader** (currently [Hans Ienasescu](mailto:hans@bio.agents)) responsibilities:
+- **Community Leader** (currently [Hans Ienasescu](mailto:hans@bioagents.tech)) responsibilities:
 
-  - announce changes to "develop" deployment, support the projects dependant on bio.agents in migrating them to the new version
+  - announce changes to "develop" deployment, support the projects dependant on bioagents.tech in migrating them to the new version
   - announce planned and actual changes to "master" deployment (esp. any potentially breaking changes to API) via all available channels
-  - maintain the issue tracker, creating, [labelling](https://github.com/bio-agents/bioagentsRegistry/blob/master/contribution.md#issue-tracking--labelling) and closing issues as required
-  - oversee (and promote where necessary) the [code of conduct](https://github.com/bio-agents/bioagentsRegistry/blob/master/contribution.md#community-code-of-conduct) 
+  - maintain the issue tracker, creating, [labelling](https://github.com/bio-agents/bioagents-registry/blob/master/contribution.md#issue-tracking--labelling) and closing issues as required
+  - oversee (and promote where necessary) the [code of conduct](https://github.com/bio-agents/bioagents-registry/blob/master/contribution.md#community-code-of-conduct) 
 
 *All developers* must:
 
-  - ensure proposed new features or other change are logged in the [issue tracker](https://github.com/bio-agents/bioagentsregistry/issues) and discussed, before coding
-  - follow the [code of conduct](https://github.com/bio-agents/bioagentsRegistry/blob/master/contribution.md#community-code-of-conduct)  
+  - ensure proposed new features or other change are logged in the [issue tracker](https://github.com/bio-agents/bioagents-registry/issues) and discussed, before coding
+  - follow the [code of conduct](https://github.com/bio-agents/bioagents-registry/blob/master/contribution.md#community-code-of-conduct)  
 
 
 # Issue tracking & labelling
-Issues are [labelled](https://github.com/bio-agents/bioagentsregistry/labels), the most important labels being:
-- ["critical priority"](https://github.com/bio-agents/bioagentsRegistry/labels/critical%20priority) : Our top priorities, including most of the reported bugs.
-- ["high priority"](https://github.com/bio-agents/bioagentsRegistry/labels/high%20priority) : We get to these once "critical priority" issues are done.
-- ["in progress"](https://github.com/bio-agents/bioagentsRegistry/labels/in%20progress) : Stuff we're actively working on.
-- ["done - staged for release"](https://github.com/bio-agents/bioagentsRegistry/labels/done%20-%20staged%20for%20release) : Issue is implemented in dev.bio.agents.
-- ["fix verified"](https://github.com/bio-agents/bioagentsRegistry/labels/fix%20verified) : fix verified An issue labelled "done - staged for release" has been independently verified as working OK.
+Issues are [labelled](https://github.com/bio-agents/bioagents-registry/labels), the most important labels being:
+- ["critical priority"](https://github.com/bio-agents/bioagents-registry/labels/critical%20priority) : Our top priorities, including most of the reported bugs.
+- ["high priority"](https://github.com/bio-agents/bioagents-registry/labels/high%20priority) : We get to these once "critical priority" issues are done.
+- ["in progress"](https://github.com/bio-agents/bioagents-registry/labels/in%20progress) : Stuff we're actively working on.
+- ["done - staged for release"](https://github.com/bio-agents/bioagents-registry/labels/done%20-%20staged%20for%20release) : Issue is implemented in dev.bioagents.tech.
+- ["fix verified"](https://github.com/bio-agents/bioagents-registry/labels/fix%20verified) : fix verified An issue labelled "done - staged for release" has been independently verified as working OK.
 
 
 # Release process
-*tbd*, see https://github.com/bio-agents/bioagentsRegistry/issues/369
+*tbd*, see https://github.com/bio-agents/bioagents-registry/issues/369
 
 
 # Community development guidelines 
-*tbd*, see https://github.com/bio-agents/bioagentsRegistry/issues/369
+*tbd*, see https://github.com/bio-agents/bioagents-registry/issues/369
 
 
 
 # Community code of conduct
 
-This code of conduct outlines our expectations for the bio.agents developer community.  It is based loosely on the [GCCBOSC 2018 Code of Conduct](https://galaxyproject.org/events/gccbosc2018/code-of-conduct/#gccbosc-2018-code-of-conduct).  We are committed to providing a welcoming and productive community for all and expect our code of conduct to be honored.  Our open source community strives to be:
+This code of conduct outlines our expectations for the bioagents.tech developer community.  It is based loosely on the [GCCBOSC 2018 Code of Conduct](https://galaxyproject.org/events/gccbosc2018/code-of-conduct/#gccbosc-2018-code-of-conduct).  We are committed to providing a welcoming and productive community for all and expect our code of conduct to be honored.  Our open source community strives to be:
 
 - **Considerate:** You depend upon the work of others who in turn depend on you.  You're unlikely to be fully aware of the ramifications of your proposals or actions, and the constraints others work under.  Before deciding or acting, talk to others and reach a common understanding of the consequences. 
 - **Constructive:** We will not agree all the time.  Where we disagree, try to understand why and maintain a positive attitude in seeking a resolution, bearing in mind we share a common goal.

@@ -1,5 +1,5 @@
 { "$schema" : "http://json-schema.org/draft-04/schema#",
-  "id" : "http://bio.agents",
+  "id" : "http://bioagents.tech",
   "type" : "object",
   "properties" : {
     "agents" : {
@@ -22,7 +22,7 @@
                   "pattern" : "[\\p{Zs}A-Za-z0-9+\\.,\\-_:;()]*"
                 },
                 "agentID" : {
-                  "description" : "Unique ID of the agent that is assigned upon registration of the software in bio.agents, normally identical to agent name.",
+                  "description" : "Unique ID of the agent that is assigned upon registration of the software in bioagents.tech, normally identical to agent name.",
                   "type" : "string",
                   "minLength" : 1,
                   "maxLength" : 12,
@@ -36,7 +36,7 @@
                   "pattern" : "[\\p{Zs}A-Za-z0-9+\\.,\\-_:;()]*"
                 },
                 "versionID" : {
-                  "description" : "Unique ID of a agent version that is assigned upon registration of the software in bio.agents.",
+                  "description" : "Unique ID of a agent version that is assigned upon registration of the software in bioagents.tech.",
                   "type" : "string",
                   "minLength" : 1,
                   "maxLength" : 12,
@@ -659,7 +659,7 @@
                             "Other"]
                 },
                 "collectionID" : {
-                  "description" : "Unique ID of a collection that the software has been assigned to within bio.agents.",
+                  "description" : "Unique ID of a collection that the software has been assigned to within bioagents.tech.",
                   "type" : "array",
                   "items" : {
                     "type" : "string",
@@ -693,16 +693,16 @@
               }
             },
             "relation" : {
-              "description" : "Details of a relationship this software shares with other software registered in bio.agents.",
+              "description" : "Details of a relationship this software shares with other software registered in bioagents.tech.",
               "type" : "array",
               "items" : {
                 "type" : "object",
                 "properties" : {
                   "bioagentsId" : {
-                    "description" : "bio.agents ID (URL)  of an existing bio.agents entry which this software is related to.",
+                    "description" : "bioagents.tech ID (URL)  of an existing bioagents.tech entry which this software is related to.",
                     "type" : "string",
                     "format" : "uri",
-                    "pattern" : "https?://bio.agents/(agent|t)/[A-Za-z0-9_\\- _ ~]+((/(version|v)/)?[A-Za-z0-9_\\- _ ~]+)?"
+                    "pattern" : "https?://bioagents.tech/(agent|t)/[A-Za-z0-9_\\- _ ~]+((/(version|v)/)?[A-Za-z0-9_\\- _ ~]+)?"
                   },
                   "type" : {
                     "description" : "Type of relation between this and another registered software.",

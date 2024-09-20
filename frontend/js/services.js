@@ -182,8 +182,8 @@ angular.module('iechor_front.services', [])
 		else if (key == 'Collection') {
 			columnDescription = {field: 'collectionID', displayName: 'Collection', width: '150', resizable: true, cellTemplate: '/partials/grid_cells/listCell.html'};
 		}
-		else if (key == 'bio.agents ID') {
-			columnDescription = {field: 'bioagentsID', displayName: 'bio.agents ID', width: '120', resizable: true, cellTemplate: '/partials/grid_cells/defaultCell.html'};
+		else if (key == 'bioagents.tech ID') {
+			columnDescription = {field: 'bioagentsID', displayName: 'bioagents.tech ID', width: '120', resizable: true, cellTemplate: '/partials/grid_cells/defaultCell.html'};
 		}
 		else if (key == 'Documentation') {
 			columnDescription = {field: 'documentation', displayName: 'Documentation', width: '160', resizable: true, cellTemplate: '/partials/grid_cells/linkListCell.html'};
@@ -225,7 +225,7 @@ angular.module('iechor_front.services', [])
 			columnDescriptionForKey('Description', visibleColumns.indexOf('Description') != -1),
 			columnDescriptionForKey('Homepage', visibleColumns.indexOf('Homepage') != -1),
 			columnDescriptionForKey('Version', visibleColumns.indexOf('Homepage') != -1),
-			columnDescriptionForKey('bio.agents ID', visibleColumns.indexOf('bio.agents ID') != -1),
+			columnDescriptionForKey('bioagents.tech ID', visibleColumns.indexOf('bioagents.tech ID') != -1),
 			columnDescriptionForKey('Agent Type', visibleColumns.indexOf('Agent Type') != -1),
 			columnDescriptionForKey('Topic', visibleColumns.indexOf('Topic') != -1),
 			columnDescriptionForKey('Publications', visibleColumns.indexOf('Publications') != -1),
@@ -356,7 +356,7 @@ angular.module('iechor_front.services', [])
 			label: "Name"
 		},
 		bioagentsID: {
-			description: "Unique, persistent bio.agents identifier.",
+			description: "Unique, persistent bioagents.tech identifier.",
 			label: "bioagentsID"
 		},
 		agentType: {
@@ -492,7 +492,7 @@ angular.module('iechor_front.services', [])
 			label: "Mirror"
 		},
 		collectionID: {
-			description: "A tag which assigns the agent to a collection in bio.agents.",
+			description: "A tag which assigns the agent to a collection in bioagents.tech.",
 			label: "Collection"
 		},
 		sourceRegistry: {
@@ -700,7 +700,7 @@ angular.module('iechor_front.services', [])
 			label: "iechorCommunity"
 		},
 		otherID: {
-			description: "A unique identifier of the agent, typically assigned by an ID-assignment authority other than bio.agents, e.g. “RRID:SCR_015644”",
+			description: "A unique identifier of the agent, typically assigned by an ID-assignment authority other than bioagents.tech, e.g. “RRID:SCR_015644”",
 			label: "otherID"
 		},
 		otherIDValue: {
@@ -716,7 +716,7 @@ angular.module('iechor_front.services', [])
 			label: "otherIDVersion"
 		},
 		relationBioagentsID: {
-			description: 'bio.agents ID of an existing bio.agents entry to which this agent is related, e.g. "needle"',
+			description: 'bioagents.tech ID of an existing bioagents.tech entry to which this agent is related, e.g. "needle"',
 			label: "relationBioagentsID"
 		},
 		relationType: {
@@ -724,7 +724,7 @@ angular.module('iechor_front.services', [])
 			label: "relationType"
 		},
 		confidence: {
-			description: 'Related to automatically generated entries from publications: describes the confidence score of an entry being a valid bio.agents entry.',
+			description: 'Related to automatically generated entries from publications: describes the confidence score of an entry being a valid bioagents.tech entry.',
 			label: "Agent confidence"
 		},
 		bioLibAppName: {

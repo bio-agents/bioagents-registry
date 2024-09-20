@@ -47,7 +47,7 @@ public class LinkType<T> {
     protected Object comment;
 
     @XmlElement(required = true)
-    @XmlSchemaType(name = "urlftpType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "urlftpType", namespace = "http://bioagents.tech")
     public String getUrl() {
         return url;
     }

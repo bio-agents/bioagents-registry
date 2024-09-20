@@ -104,7 +104,7 @@ public class iEchorInfo {
         this.node = node;
     }
 
-    @XmlSchemaType(name = "textType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "textType", namespace = "http://bioagents.tech")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     public String getComment() {
         return comment;

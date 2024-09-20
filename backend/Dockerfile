@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 
-LABEL maintainer="Hans-Ioan Ienasescu <hans@bio.agents>"
+LABEL maintainer="Hans-Ioan Ienasescu <hans@bioagents.tech>"
 
 # Disable buffering for logs.
 ENV PYTHONUNBUFFERED 1
@@ -37,7 +37,7 @@ RUN apt-get update -y && apt-get install curl
 
 EXPOSE 80
 
-# remove default apache config from sites-enable so bio.agents subdomain redirect works
+# remove default apache config from sites-enable so bioagents.tech subdomain redirect works
 RUN rm /etc/apache2/sites-enabled/000-default.conf
 
 RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log && ln -sf /proc/self/fd/1 /var/log/apache2/error.log && ln -sf /proc/self/fd/1 /var/log/apache2/other_vhosts_access.log

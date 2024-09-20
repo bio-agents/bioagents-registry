@@ -12,8 +12,8 @@ http://www.altova.com/mapforce
 	<xsl:output method="xml" encoding="UTF-8" indent="yes"/>
 	<xsl:template match="/">
 		<xsl:variable name="var1_initial" select="."/>
-		<agents xmlns="bioagentsSchema">
-			<xsl:attribute name="xsi:schemaLocation" namespace="http://www.w3.org/2001/XMLSchema-instance">bioagentsSchema file:///E:/repos/GitHub/bioagentsShim/genericxml2xml/versions/bioagents-3.3.0/bioagents_3.3.0.xsd</xsl:attribute>
+		<agents xmlns="bioagents-schema">
+			<xsl:attribute name="xsi:schemaLocation" namespace="http://www.w3.org/2001/XMLSchema-instance">bioagents-schema file:///E:/repos/GitHub/bioagentsShim/genericxml2xml/versions/bioagents-3.3.0/bioagents_3.3.0.xsd</xsl:attribute>
 			<xsl:for-each select="*[local-name()='root' and namespace-uri()='']/*[local-name()='list' and namespace-uri()='']/*[local-name()='list-item' and namespace-uri()='']">
 				<xsl:variable name="var2_cur" select="."/>
 				<agent>

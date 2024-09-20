@@ -135,7 +135,7 @@ public class Labels {
     }
 
     @XmlElement(name = "collectionID")
-    @XmlSchemaType(name = "bioagentsCollectionIdType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "bioagentsCollectionIdType", namespace = "http://bioagents.tech")
     public List<String> getCollectionIDs() {
         if (collectionIDs == null) {
             collectionIDs = new ArrayList<>();

@@ -56,7 +56,7 @@ def handle_ecosystem_error(logger, the_exception, bt = None, log_exception = Fal
         send_mail(
             subject="Error in ecosystem!",
             message=str(the_exception),
-            from_email="support@bio.agents",
+            from_email="support@bioagents.tech",
             recipient_list=ecosystem_settings.ECO_EMAIL_RECIPIENTS,
             fail_silently=True
         )
@@ -80,7 +80,7 @@ def ecosytem_handle_agent_operations(bioagents_user, agent, operation):
     Makes a CREATE / UPDATE / DELETE (pull) request to the GitHub Ecosystem
     
     Parameters:
-    bioagents_user (string): The bio.agents username
+    bioagents_user (string): The bioagents.tech username
     agent (dict): The agent annotation
     operation (string): one of 'CREATE', 'UPDATE', 'DELETE'
     '''
@@ -114,7 +114,7 @@ def ecosytem_handle_agent_operations(bioagents_user, agent, operation):
 
         # Log sucessful creation
         if ecosystem_settings.ECO_LOG_ISSUE and logger:
-            logger.info('Success! Agent {} PR: {} for agent with id: {} by bio.agents user: {}'.format(
+            logger.info('Success! Agent {} PR: {} for agent with id: {} by bioagents.tech user: {}'.format(
                 operation,
                 get_pr_link(pr.number),
                 bt.agent_id, 

@@ -1,6 +1,6 @@
 USE iechor;
 
-UPDATE django_site set domain='http://localhost:8000', name='bio.agents local server' where id = 1;
+UPDATE django_site set domain='http://localhost:8000', name='bioagents.tech local server' where id = 1;
 
 -- required for "issue" code to work
 INSERT INTO `iechor_issuestate` (`id`, `name`, `description`)

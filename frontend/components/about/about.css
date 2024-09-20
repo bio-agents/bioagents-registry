@@ -1,91 +1,80 @@
-.about-section-container 
-{	
-	border-left: 5px solid #EF7500;
-	padding-left: 15px;
-	margin-top: 50px;
-	padding-bottom: 5px;
+/* 全局背景和基本字体设置 */
+body {
+    background-color: #f3f3f3; /* 轻灰色背景，类似 Docker Hub */
+    font-family: 'Roboto', sans-serif;
+    color: #4a4a4a; /* 轻黑色文字 */
+    line-height: 1.6; /* 增加行高提高可读性 */
 }
 
-.about-section-title 
-{	
-	color: #4A4A4A;
-	font-family: 'Roboto';
-	font-size: 24px;
-	font-weight: 100;
+/* 关于部分的容器 */
+.about-section-container {
+    border-left: 5px solid #0073ec; /* Docker Hub 特色蓝色 */
+    padding-left: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: #fff; /* 白色背景 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 轻微的阴影效果 */
 }
 
-.about-section-text 
-{	
-	color: #4A4A4A;
-	font-family: 'Roboto';
-	font-size: 15px;
-	font-weight: 100;
-	text-align: justify;
+/* 标题风格 */
+.about-section-title {
+    color: #333; /* 更深的灰色，增强对比 */
+    font-size: 26px; /* 稍大的字体大小 */
+    font-weight: 400; /* 中等字重 */
 }
 
-.about-contact-container 
-{	
-	display: flex;
-	flex-wrap: wrap;
+/* 文本风格 */
+.about-section-text {
+    color: #666; /* 淡灰色文字 */
+    font-size: 16px; /* 标准的文字大小 */
+    padding-bottom: 10px; /* 增加底部填充 */
 }
 
-.about-contact-container-item
-{
-	flex-grow: 1;
-	min-width: 16%;
+/* 联系人容器 */
+.about-contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* 平均分布子元素 */
 }
 
-.about-contact 
-{	
-	color: #4A4A4A;
-	font-family: 'Roboto';
-	text-align: center;
-	margin-bottom: 15px;
+/* 联系人项 */
+.about-contact-container-item {
+    flex-grow: 1;
+    min-width: 200px; /* 调整最小宽度以适应不同屏幕 */
+    margin-bottom: 20px; /* 增加底部外边距 */
 }
 
-.about-contact-initials 
-{	
-	margin: 0 auto;
-	font-size: 36px;
-	font-weight: 100;
-	height: 86px;
-	width:  86px;
-	border: 1px solid #4A4A4A;
-	border-radius: 43px;
-	padding-top: 15px;
-	margin-bottom: 10px;
+/* 联系人样式 */
+.about-contact {
+    text-align: center;
+    padding: 10px;
+    background-color: #fff; /* 背景色 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* 为联系人项添加阴影 */
 }
 
-.about-contact-image 
-{	
-	max-height: 56px;
-	max-width: 56px;
+/* 联系人头像和名字 */
+.about-contact-initials {
+    border-color: #0073ec; /* Docker Hub 蓝色 */
 }
 
-.about-contact-name 
-{	
-	font-size: 16px;
-	font-weight:400;
+.about-contact-image {
+    border-radius: 50%; /* 圆形图像 */
 }
 
-.about-contact-role 
-{	
-	font-size: 14px;
-	font-weight: 100;
+.about-contact-name, .about-contact-role {
+    color: #333; /* 文字颜色 */
 }
 
-
-
-/* New changes to about page */
-div .about-container{
-	background-color: #FFF !important;
-
+/* 修饰新的页面部分 */
+div .about-container {
+    padding: 20px;
+    margin-top: 10px;
 }
-.about-container h2{
-	margin-bottom: 60px;
+.about-container h2 {
+    color: #0073ec; /* 使用 Docker Hub 蓝色 */
+    margin-bottom: 50px;
 }
 
-.about-section{
-	margin-bottom: 45px;
-	margin-top: 45px;
+.about-section {
+    margin-bottom: 40px;
 }

@@ -2,7 +2,7 @@ FROM node:11.15.0
 #FROM node:14.15.4
 #FROM node:4.7.2
 
-LABEL maintainer="Hans-Ioan Ienasescu <hans@bio.agents>"
+LABEL maintainer="chen xingqiang <hans@bioagents.tech>"
 
 RUN useradd --user-group --create-home bioagents
 
@@ -26,7 +26,7 @@ COPY bower.json gulpfile.js index-async.html index.html package.json package-loc
 
 RUN chown -R bioagents:bioagents $HOME/*
 USER bioagents
-    
+
 RUN npm config set prefix /usr/local && npm install && export PATH="./node_modules/.bin:$PATH" && bower install
 
 # Required to work on Linux, otherwise there are permission errors

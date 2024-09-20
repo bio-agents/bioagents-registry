@@ -41,7 +41,7 @@ public class Publication {
     private String pmcid;
     private PublicationType type;
 
-    @XmlSchemaType(name = "doiType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "doiType", namespace = "http://bioagents.tech")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     public String getDoi() {
         return doi;

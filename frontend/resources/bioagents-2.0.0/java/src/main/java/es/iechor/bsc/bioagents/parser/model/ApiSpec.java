@@ -44,7 +44,7 @@ public class ApiSpec {
     private List<Endpoint> endpoints;
 
     @XmlElement(required = true)
-    @XmlSchemaType(name = "urlType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "urlType", namespace = "http://bioagents.tech")
     public String getBaseURL() {
         return baseURL;
     }

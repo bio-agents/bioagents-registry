@@ -163,7 +163,7 @@ angular.module('iechor_front')
 	}
 
 	$scope.setMetadataForSoftware = function(software) {
-		ngMeta.setTitle(software.name, ' · bio.agents');
+		ngMeta.setTitle(software.name, ' · bioagents.tech');
 		ngMeta.setTag('description', software.description);
 		ngMeta.setTag('og:title', software.name);
 		ngMeta.setTag('og:description', software.description);

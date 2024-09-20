@@ -13,8 +13,8 @@ def rdfize(entry):
     try:
         ctx = {
             "@context": {
-                "@base": "https://bio.agents/",
-                "bioagents": "https://bio.agents/ontology/",
+                "@base": "https://bioagents.tech/",
+                "bioagents": "https://bioagents.tech/ontology/",
                 "edam": "http://edamontology.org/",
                 "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
                 "sc": "http://schema.org/",

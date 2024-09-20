@@ -23,7 +23,7 @@
  *****************************************************************************
  */
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://bio.agents", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://bioagents.tech", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package es.iechor.bsc.bioagents.parser.model;
 
 /**

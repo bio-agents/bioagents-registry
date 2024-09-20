@@ -227,7 +227,7 @@ class ResourceSerializer(serializers.ModelSerializer):
 	# alias for 'was_id_validated'
 	validated = serializers.IntegerField(read_only=True, source='was_id_validated')
 
-	bioagentsID = serializers.CharField(min_length=1, max_length=100, allow_blank=False, validators=[UniqueValidator(queryset=Resource.objects.filter(visibility=1), message="A resource with this ID already exists. bio.agents IDs need to be unique")])
+	bioagentsID = serializers.CharField(min_length=1, max_length=100, allow_blank=False, validators=[UniqueValidator(queryset=Resource.objects.filter(visibility=1), message="A resource with this ID already exists. bioagents.tech IDs need to be unique")])
 	#bioagentsCURIE = serializers.CharField(allow_blank=False, validators=[UniqueValidator(queryset=Resource.objects.filter(visibility=1), message="A resource with this ID already exists.")])
 	# bioagentsID = serializers.CharField(read_only=True);
 	bioagentsCURIE = serializers.CharField(read_only=True);

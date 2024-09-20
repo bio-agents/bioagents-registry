@@ -51,12 +51,12 @@ var iechor_front = angular.module('iechor_front', [
 		templateUrl: "components/home/home.html",
 		data: {
 			meta: {
-				'title': 'bio.agents · Bioinformatics Agents and Services Discovery Portal',
+				'title': 'bioagents.tech · Bioinformatics Agents and Services Discovery Portal',
 				'description': 'A registry of bioinformatics software resources including biological databases, analytical agents and data services',
 				'titleSuffix': '',
-				'og:title': 'bio.agents · Bioinformatics Agents and Services Discovery Portal',
+				'og:title': 'bioagents.tech · Bioinformatics Agents and Services Discovery Portal',
 				'og:description': 'A registry of bioinformatics software resources including biological databases, analytical agents and data services',
-				'og:image': 'https://bio.agents/img/IECHOR_logo_white_background_small.png'
+				'og:image': 'https://bioagents.tech/img/IECHOR_logo_white_background_small.png'
 			},
 			roles: []
 		},
@@ -79,8 +79,8 @@ var iechor_front = angular.module('iechor_front', [
 		templateUrl: "components/community/community.html",
 		data: {
 			meta: {
-				'title': 'Communities in bio.agents',
-				'description': 'bio.agents and communities'
+				'title': 'Communities in bioagents.tech',
+				'description': 'bioagents.tech and communities'
 			},
 			roles: []
 		},
@@ -92,7 +92,7 @@ var iechor_front = angular.module('iechor_front', [
 		data: {
 			meta: {
 				'title': 'Communities',
-				'description': 'bio.agents and communities'
+				'description': 'bioagents.tech and communities'
 			},
 			roles: []
 		},
@@ -112,7 +112,7 @@ var iechor_front = angular.module('iechor_front', [
 		data: {
 			meta: {
 				'title': 'Stats',
-				'description': 'bio.agents content statistics.'
+				'description': 'bioagents.tech content statistics.'
 			},
 			roles: []
 		},
@@ -124,12 +124,12 @@ var iechor_front = angular.module('iechor_front', [
 		templateUrl: "partials/search_results.html",
 		data: {
 			meta: {
-				'title': 'bio.agents · Bioinformatics Agents and Services Discovery Portal',
+				'title': 'bioagents.tech · Bioinformatics Agents and Services Discovery Portal',
 				'description': 'A registry of bioinformatics software resources including biological databases, analytical agents and data services',
 				'titleSuffix': '',
-				'og:title': 'bio.agents · Bioinformatics Agents and Services Discovery Portal',
+				'og:title': 'bioagents.tech · Bioinformatics Agents and Services Discovery Portal',
 				'og:description': 'A registry of bioinformatics software resources including biological databases, analytical agents and data services',
-				'og:image': 'https://bio.agents/img/IECHOR_logo_white_background_small.png'
+				'og:image': 'https://bioagents.tech/img/IECHOR_logo_white_background_small.png'
 			},
 			roles: []
 		},
@@ -140,10 +140,10 @@ var iechor_front = angular.module('iechor_front', [
 		templateUrl: "partials/subdomains/domains.html",
 		data: {
 			meta: {
-				'title': 'bio.agents domains',
-				'description': 'Explore and search all bio.agents domains and manage your own domains.',
-				'og:title': 'bio.agents domains',
-				'og:description': 'Explore and search all bio.agents domains and manage your own domains.'
+				'title': 'bioagents.tech domains',
+				'description': 'Explore and search all bioagents.tech domains and manage your own domains.',
+				'og:title': 'bioagents.tech domains',
+				'og:description': 'Explore and search all bioagents.tech domains and manage your own domains.'
 			},
 			roles: []
 		},
@@ -156,9 +156,9 @@ var iechor_front = angular.module('iechor_front', [
 		data: {
 			meta: {
 				'title': 'Register new resource',
-				'description': 'Register a agent or database in bio.agents.',
+				'description': 'Register a agent or database in bioagents.tech.',
 				'og:title': 'Register new resource',
-				'og:description': 'Register a agent or database in bio.agents.'
+				'og:description': 'Register a agent or database in bioagents.tech.'
 		},
 			roles: ['User']
 		},
@@ -223,9 +223,9 @@ var iechor_front = angular.module('iechor_front', [
 		data: {
 			meta: {
 				'title': 'Log in',
-				'description': 'Log in to bio.agents.',
+				'description': 'Log in to bioagents.tech.',
 				'og:title': 'Log in',
-				'og:description': 'Log in to bio.agents.'
+				'og:description': 'Log in to bioagents.tech.'
 			},
 			roles: []
 		},
@@ -238,9 +238,9 @@ var iechor_front = angular.module('iechor_front', [
 		data: {
 			meta: {
 				'title': 'Sign up',
-				'description': 'Sign up for bio.agents.',
+				'description': 'Sign up for bioagents.tech.',
 				'og:title': 'Sign up',
-				'og:description': 'Sign up for bio.agents.'
+				'og:description': 'Sign up for bioagents.tech.'
 			},
 			roles: []
 		},
@@ -500,8 +500,8 @@ var iechor_front = angular.module('iechor_front', [
 .config(function(ngMetaProvider) {
 
     ngMetaProvider.useTitleSuffix(true);
-    ngMetaProvider.setDefaultTitle('bio.agents');
-    // ngMetaProvider.setDefaultTitleSuffix(' · bio.agents');
+    ngMetaProvider.setDefaultTitle('bioagents.tech');
+    // ngMetaProvider.setDefaultTitleSuffix(' · bioagents.tech');
     // ngMetaProvider.setDefaultTag('author', 'John Smith');
 })
 

@@ -33,7 +33,7 @@ ECO_BIOTOOLS_EXTENSION =  getenv('ECO_BIOTOOLS_EXTENSION', 'bioagents.json')
 ECO_DELETED_BRANCH_SUFFIX = getenv('ECO_DELETED_BRANCH_SUFFIX', '__delete')
 # recommended to have loggin on by default, saves a lot of hassle
 ECO_LOG_ISSUE  = getenv('ECO_LOG_ISSUE', True, castf=bool)
-# For the log file we can have a specific bio.agents backend filepath like:
+# For the log file we can have a specific bioagents.tech backend filepath like:
 #   /iechor/application/backend/log/ecosytem.log
 ECO_LOG_FILE = getenv('ECO_LOG_FILE', 'ecosystem.log')
 ECO_LOGGER_NAME = getenv('ECO_LOGGER_NAME', 'ecosystem_logger')

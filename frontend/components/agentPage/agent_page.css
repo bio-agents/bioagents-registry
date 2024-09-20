@@ -1,154 +1,221 @@
+/* General Styles */
+body, a, span {
+    font-family: 'Roboto', sans-serif; /* Consistent font throughout */
+    color: #333; /* Docker Hub uses darker grays for better readability */
+}
+
+/* Label Outline */
 .label-outline {
-	background-color: transparent;
-	outline-color: grey;
-	/*border: 1px solid #CCCCCC;*/
-	color: #575757;
+    background-color: transparent;
+    border: 1px solid #ccc; /* Cleaner border style */
+    color: #575757;
 }
 
 .label-outline[href]:hover,
 .label-outline[href]:focus {
-	background-color: #3071a9;
+    background-color: #007bff; /* Docker Hub's link hover color */
+    color: #ffffff;
 }
 
+/* Badge for Topics */
 .badge-topic {
-	margin-top: -1em;
-	background-color: #ED7520;
-	border: 0px solid #CCCCCC;
-	border-radius: 3px;
+    margin-top: -1em;
+    background-color: #007bff; /* Bright blue, similar to Docker Hub's primary blue */
+    border-radius: 3px;
 }
 
+/* Version Text */
 span.agent-page-version-text {
-	color: #7f7f7f;
-	font-weight: lighter;
-	display: block;
-	font-size: 0.95em;
-	margin-left: 5px;
-	margin-bottom: 5px;
+    color: #6c757d; /* Using a Bootstrap-style gray */
+    font-weight: lighter;
+    display: block;
+    font-size: 0.95em;
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
 
-.iechor-info{
-margin-bottom: 10px;
+/* Information Margin */
+.iechor-info {
+    margin-bottom: 10px;
 }
 
-/*.agent-tag-divider {
-	color: #CCCCCC;
-}*/
-
-/*.agent-tag-divider::after { 
-	content: "|";
-	font-family: 'Open Sans';
-	font-size: 18px;
-	font-weight: 100;
-	margin-right: 4px;
-	margin-left: 0px;
-}*/
-
+/* Orange Outlined Label */
 .label-outline-orange {
-	background-color: transparent;
-	border: 1px solid #ED7520;
-	color: #ED7520;
+    background-color: transparent;
+    border: 1px solid #fd7e14; /* Docker Hub uses vibrant colors sparingly */
+    color: #fd7e14;
 }
 
 .label-outline-orange[href]:hover,
 .label-outline-orange[href]:focus {
-	background-color: lightgrey;
-	color: #575757;
-	border: 1px solid white;
+    background-color: lightgrey;
+    color: #575757;
+    border-color: #ffffff;
 }
 
+/* Text Alert */
 .agent-page-danger-text {
-	margin-bottom: 2em;
-	color: #d9534f;
+    margin-bottom: 2em;
+    color: #dc3545; /* Bootstrap danger color for consistency */
 }
 
-
+/* Function Elements */
 .function-image-element {
-	background-color: #D0E0EB;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 5px;
-	-khtml-border-radius: 5px;
-	border-radius: 5px;
-	color: #575757;
-	/*font-weight: bold;*/
-	font-size: 90%;
-	border: 0px solid #CCCCCC;
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 5px;
+    color: #575757;
+    font-size: 90%;
 }
 
 .function-arrow-element {
-	color: #575757;
+    color: #575757;
 }
 
-.function-input-output-element {
-
-}
-
+/* Function Comment Label */
 .agent-page-function-comment-label {
-	text-align: center; 
-	width:100%; 
-	margin-top:7px; 
-	font-weight: lighter;
+    text-align: center;
+    width: 100%;
+    margin-top: 7px;
+    font-weight: lighter;
 }
 
+/* Grey Text */
 .agent-page-grey-text {
-	color: #575757;
+    color: #575757;
 }
 
+/* Divider Label */
 .agent-page-diver-label {
-	display: block;
-	text-align: left;
-	overflow: hidden;
-	white-space: nowrap; 
-	margin-top: 40px;
-	margin-bottom: 4px;
-	color: #575757;
-	font-weight: bold;
-	font-size: 80%;
+    display: block;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 40px;
+    margin-bottom: 4px;
+    color: #575757;
+    font-weight: bold;
+    font-size: 80%;
 }
 
 .agent-page-diver-label > span {
-	position: relative;
-	display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .agent-page-diver-label > span:before,
 .agent-page-diver-label > span:after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	width: 9999px;
-	border-top: 1px solid #E6E6E6;
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    border-top: 1px solid #E6E6E6; /* Lighter line for subtlety */
 }
 
 .agent-page-diver-label > span:before {
-	right: 100%;
-	margin-right: 15px;
+    right: 100%;
+    margin-right: 15px;
 }
 
 .agent-page-diver-label > span:after {
-	left: 100%;
-	margin-left: 15px;
+    left: 100%;
+    margin-left: 15px;
 }
 
 /* Callouts */
-
 .agent-page-callout-header {
-	color: #428bca;
-	font-weight: lighter;
-	font-size: 90%;
+    color: #007bff; /* Match Docker Hub's primary blue */
+    font-weight: lighter;
+    font-size: 90%;
 }
 
-
 .agent-page-callout-text {
-	color: #575757;
-	font-weight: lighter;
-	font-size: 90%;
-	margin-top: -0.25em;
-	display:block;
-	text-align: justify;
+    color: #575757;
+    font-weight: lighter;
+    font-size: 90%;
+    margin-top: -0.25em;
+    display: block;
+    text-align: justify;
 }
 
 .agent-page-row {
-	width: 100%; 
-	margin-left: 0px;
+    width: 100%;
+    margin-left: 0px;
 }
 
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* General container settings for content alignment and padding */
+.default-background {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    margin: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.default-controls-background {
+    background-color: #f8f9fa;
+    padding: 10px 40px;
+    margin: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+/* Centering spinner and other elements */
+div[spinner] {
+    margin: 40px auto;
+    display: block; /* Assuming spinner is a block element or needs to be treated as such */
+}
+
+/* Responsive columns for various sections */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-4, .col-sm-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Adding hover effects similar to Docker Hub links */
+a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+/* Heading and text styles */
+h2, h4 {
+    color: #007bff; /* Blue color for headings to match Docker Hub's theme */
+}
+
+/* Links styling */
+a {
+    color: #007bff;
+    text-decoration: none;
+}

@@ -188,7 +188,7 @@ DB_COLLATION = {
 # EMAIL_HOST_USER = ''
 # EMAIL_HOST_PASSWORD = ''
 # EMAIL_USE_TLS = True
-# DEFAULT_FROM_EMAIL = 'no-reply@local-bio.agents'
+# DEFAULT_FROM_EMAIL = 'no-reply@local-bioagents.tech'
 
 # Zoho Mail works (create an account)
 # EMAIL_HOST = 'smtp.zoho.com'
@@ -196,13 +196,13 @@ DB_COLLATION = {
 # EMAIL_USE_SSL = True
 # EMAIL_HOST_USER =  'zoho_email_here'
 # EMAIL_HOST_PASSWORD = ''
-# DEFAULT_FROM_EMAIL = 'no-reply@local-bio.agents'
+# DEFAULT_FROM_EMAIL = 'no-reply@local-bioagents.tech'
 
 EMAIL_HOST = getenv('EMAIL_HOST', 'smtp.zoho.com')
 EMAIL_PORT = getenv('EMAIL_PORT', 465, castf=int)
 EMAIL_USE_SSL = getenv('EMAIL_USE_SSL', True, castf=bool)
-EMAIL_HOST_USER = getenv('EMAIL_HOST_USER', 'support@bio.agents')
-DEFAULT_FROM_EMAIL = getenv('DEFAULT_FROM_EMAIL', 'support@bio.agents')
+EMAIL_HOST_USER = getenv('EMAIL_HOST_USER', 'support@bioagents.tech')
+DEFAULT_FROM_EMAIL = getenv('DEFAULT_FROM_EMAIL', 'support@bioagents.tech')
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

@@ -26,7 +26,7 @@ class XMLSchemaParser(BaseParser):
 		"""
 
 		# Identical to bioagents_3.3.0.xsd except no maxOccurs="unbounded" on the "agent" element
-		with open('/iechor/application/backend/iechor/bioagentsSchema/bioagents_3.3.0-singleagent.xsd', 'r') as f:
+		with open('/iechor/application/backend/iechor/bioagents-schema/bioagents_3.3.0-singleagent.xsd', 'r') as f:
 			schema_root = lxmletree.XML(f.read())
 		
 		schema = lxmletree.XMLSchema(schema_root)
@@ -42,15 +42,15 @@ class XMLSchemaParser(BaseParser):
 			if len(xml_tree) > 1:
 				raise ParseError("Can only work with a single agent at a time")
 			
-			#xslt for transforming from bioagentsSchema to generic xml from django
-			xslt1 = lxmletree.parse('/iechor/application/backend/iechor/bioagentsSchema/bioagentsSchema_3.3.0_XML_to_framework_XML_xslt1.0.xslt')
+			#xslt for transforming from bioagents-schema to generic xml from django
+			xslt1 = lxmletree.parse('/iechor/application/backend/iechor/bioagents-schema/bioagents-schema_3.3.0_XML_to_framework_XML_xslt1.0.xslt')
 			transform1 = lxmletree.XSLT(xslt1)
 			dom = lxmletree.fromstring(xml_string)
 			newdom = transform1(dom)
 
 
 			# removing empty elements
-			xslt2 = lxmletree.parse("/iechor/application/backend/iechor/bioagentsSchema/removeEmptyElements.xslt")
+			xslt2 = lxmletree.parse("/iechor/application/backend/iechor/bioagents-schema/removeEmptyElements.xslt")
 			transform2 = lxmletree.XSLT(xslt2)
 			newdom2 = transform2(newdom)
 			root = newdom2.getroot()

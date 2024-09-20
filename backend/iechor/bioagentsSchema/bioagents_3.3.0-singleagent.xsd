@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2018 rel. 2 sp1 (x64) (http://www.altova.com) by Jon Ison (private) -->
 <!-- edited at GitHub (https://github.com) by Matus Kalas -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns="bioagentsSchema" targetNamespace="bioagentsSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns="bioagents-schema" targetNamespace="bioagents-schema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="agents">
 		<xs:annotation>
 			<xs:documentation>Description of one or more bioinformatics agents - application software with well-defined data processing functions (inputs, outputs and operations).  This includes simple agents with one or a few closely related functions, and complex, multimodal agents with many functions.  Agents may be available available for immediate use as online services, or in a form which which you can download, install, configure and run yourself.</xs:documentation>
@@ -94,26 +94,26 @@
 				</xs:element>
 				<xs:element name="bioagentsID" type="bioagentsIdType" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Unique ID (case insensitive) of the agent that is assigned upon registration of the software in bio.agents, normally identical to agent name.</xs:documentation>
+						<xs:documentation>Unique ID (case insensitive) of the agent that is assigned upon registration of the software in bioagents.tech, normally identical to agent name.</xs:documentation>
 						<xs:appinfo>
-							<uiTip>Unique ID of the agent that is assigned upon registration of the software in bio.agents.</uiTip>
+							<uiTip>Unique ID of the agent that is assigned upon registration of the software in bioagents.tech.</uiTip>
 						</xs:appinfo>
-						<xs:documentation>bio.agents IDs are set by bio.agents admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.agents API.</xs:documentation>
+						<xs:documentation>bioagents.tech IDs are set by bioagents.tech admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bioagents.tech API.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="bioagentsCURIE" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>bio.agents CURIE (compact URI) based on the bio.agents agent ID.</xs:documentation>
-						<xs:documentation>The bio.agents CURIE is simply the bio.agents agent ID with the prefix "bioagents:".</xs:documentation>
+						<xs:documentation>bioagents.tech CURIE (compact URI) based on the bioagents.tech agent ID.</xs:documentation>
+						<xs:documentation>The bioagents.tech CURIE is simply the bioagents.tech agent ID with the prefix "bioagents:".</xs:documentation>
 						<xs:appinfo>
-							<uiTip>bio.agents CURIE (compact URI) based on the bio.agents agent ID.</uiTip>
+							<uiTip>bioagents.tech CURIE (compact URI) based on the bioagents.tech agent ID.</uiTip>
 						</xs:appinfo>
 						<xs:appinfo>
 							<altova:exampleValues>
 								<altova:example value="bioagents:signalp"/>
 							</altova:exampleValues>
 						</xs:appinfo>
-						<xs:documentation>bio.agents CURIEs are set by bio.agents admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.agents API.</xs:documentation>
+						<xs:documentation>bioagents.tech CURIEs are set by bioagents.tech admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bioagents.tech API.</xs:documentation>
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:anyURI">
@@ -123,9 +123,9 @@
 				</xs:element>
 				<xs:element name="version" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>Version information (typically a version number) of the software applicable to this bio.agents entry.</xs:documentation>
+						<xs:documentation>Version information (typically a version number) of the software applicable to this bioagents.tech entry.</xs:documentation>
 						<xs:appinfo>
-							<uiTip>Version information (typically a version number) of the software applicable to this bio.agents entry.</uiTip>
+							<uiTip>Version information (typically a version number) of the software applicable to this bioagents.tech entry.</uiTip>
 						</xs:appinfo>
 					</xs:annotation>
 					<xs:simpleType>
@@ -134,11 +134,11 @@
 				</xs:element>
 				<xs:element name="otherID" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>A unique identifier of the software, typically assigned by an ID-assignment authority other than bio.agents.</xs:documentation>
+						<xs:documentation>A unique identifier of the software, typically assigned by an ID-assignment authority other than bioagents.tech.</xs:documentation>
 						<xs:appinfo>
-							<uiTip>Unique identifier of the software not (typically) assigned by bio.agents.</uiTip>
+							<uiTip>Unique identifier of the software not (typically) assigned by bioagents.tech.</uiTip>
 						</xs:appinfo>
-						<xs:documentation>This field is not normally used for bio.agents agentIDs, but could be in the exceptional case that multiple such IDs were needed for a given entry.</xs:documentation>
+						<xs:documentation>This field is not normally used for bioagents.tech agentIDs, but could be in the exceptional case that multiple such IDs were needed for a given entry.</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
@@ -186,7 +186,7 @@
 											</enumItem>
 											<enumItem>
 												<term>bioagentsCURIE</term>
-												<uiTip>bio.agents CURIE (secondary identifier).</uiTip>
+												<uiTip>bioagents.tech CURIE (secondary identifier).</uiTip>
 											</enumItem>
 										</enum>
 									</xs:appinfo>
@@ -225,7 +225,7 @@
 				<xs:element name="agentType" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>A type of application software: a discrete software entity can have more than one type.</xs:documentation>
-						<xs:documentation>bio.agents includes all types of bioinformatics agents: application software with well-defined data processing functions (inputs, outputs and operations). When registering a agent, one or more agent types may be assigned, reflecting the different facets of the software being described.</xs:documentation>
+						<xs:documentation>bioagents.tech includes all types of bioinformatics agents: application software with well-defined data processing functions (inputs, outputs and operations). When registering a agent, one or more agent types may be assigned, reflecting the different facets of the software being described.</xs:documentation>
 						<xs:appinfo>
 							<uiTip>Type of application software.  A agent may have more than one type.</uiTip>
 										>
@@ -248,7 +248,7 @@
 								</enumItem>
 								<enumItem>
 									<term>Library</term>
-									<uiTip>A collection of components that are used to construct other agents.  bio.agents scope includes component libraries performing high-level bioinformatics functions but excludes lower-level programming libraries.</uiTip>
+									<uiTip>A collection of components that are used to construct other agents.  bioagents.tech scope includes component libraries performing high-level bioinformatics functions but excludes lower-level programming libraries.</uiTip>
 								</enumItem>
 								<enumItem>
 									<term>Ontology</term>
@@ -473,7 +473,7 @@
 						<xs:appinfo>
 							<uiTip>Software or data usage license. For online services, this refers to the license of the underlying software or data.</uiTip>
 						</xs:appinfo>
-						<xs:documentation>Identifier from the SPDX license list (https://spdx.org/licenses/).  In future, based on the supplied license, a label e.g. "Open-source" may be applied to the entry in bio.agents.</xs:documentation>
+						<xs:documentation>Identifier from the SPDX license list (https://spdx.org/licenses/).  In future, based on the supplied license, a label e.g. "Open-source" may be applied to the entry in bioagents.tech.</xs:documentation>
 						<xs:appinfo>
 							<enum>
 								<enumItem>
@@ -507,10 +507,10 @@
 							</enumItem>
 							<enumItem>
 								<term>Other</term>
-								<uiTip>Software under license not currently supported by bioagentsSchema.</uiTip>
+								<uiTip>Software under license not currently supported by bioagents-schema.</uiTip>
 							</enumItem>
 						</xs:appinfo>
-						<xs:documentation>Use "Proprietary" where the software must be obtained from the provider (e.g. for money), and is then owned.  Use "Freeware" for proprietary software that is available at no monetary cost. Use "Not licensed" for software which is not licensed and is not proprietary, and "Other" for software under license not currently supported by bioagentsSchema.</xs:documentation>
+						<xs:documentation>Use "Proprietary" where the software must be obtained from the provider (e.g. for money), and is then owned.  Use "Freeware" for proprietary software that is available at no monetary cost. Use "Not licensed" for software which is not licensed and is not proprietary, and "Other" for software under license not currently supported by bioagents-schema.</xs:documentation>
 						<xs:documentation>Note that for online services, the license attribute refers to the license of the underlying software or data, or a part of those.</xs:documentation>
 					</xs:annotation>
 					<xs:simpleType>
@@ -846,9 +846,9 @@
 				</xs:element>
 				<xs:element name="collectionID" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>A tag which assigns the software to a collection in bio.agents.</xs:documentation>
+						<xs:documentation>A tag which assigns the software to a collection in bioagents.tech.</xs:documentation>
 						<xs:appinfo>
-							<uiTip>Tag for a collection that the software has been assigned to within bio.agents.</uiTip>
+							<uiTip>Tag for a collection that the software has been assigned to within bioagents.tech.</uiTip>
 						</xs:appinfo>
 						<xs:appinfo>
 							<altova:exampleValues>
@@ -1252,7 +1252,7 @@
 													</enumItem>
 													<enumItem>
 														<term>Software catalogue</term>
-														<uiTip>Some registry, catalogue etc. other than bio.agents where the agent is also described..</uiTip>
+														<uiTip>Some registry, catalogue etc. other than bioagents.tech where the agent is also described..</uiTip>
 													</enumItem>
 													<enumItem>
 														<term>Repository</term>
@@ -1540,7 +1540,7 @@
 													</enumItem>
 													<enumItem>
 														<term>Other</term>
-														<uiTip>Some other type of documentation not listed in bioagentsSchema.</uiTip>
+														<uiTip>Some other type of documentation not listed in bioagents-schema.</uiTip>
 													</enumItem>
 												</enum>
 											</xs:appinfo>
@@ -1585,16 +1585,16 @@
 				</xs:element>
 				<xs:element name="relation" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
-						<xs:documentation>Details of a relationship this software shares with other software registered in bio.agents.</xs:documentation>
+						<xs:documentation>Details of a relationship this software shares with other software registered in bioagents.tech.</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="bioagentsID" type="bioagentsIdType">
 								<xs:annotation>
-									<xs:documentation>bio.agents ID of an existing bio.agents entry which this software is related to.</xs:documentation>
-									<xs:documentation>Relations may only be defined between registered software.  The ID is a URL in the bio.agents namespace and reflects (normally exactly) the agent name and version: see http://bioagents.readthedocs.io/.</xs:documentation>
+									<xs:documentation>bioagents.tech ID of an existing bioagents.tech entry which this software is related to.</xs:documentation>
+									<xs:documentation>Relations may only be defined between registered software.  The ID is a URL in the bioagents.tech namespace and reflects (normally exactly) the agent name and version: see http://bioagents.readthedocs.io/.</xs:documentation>
 									<xs:appinfo>
-										<uiTip>bio.agents ID (URL) of an existing bio.agents entry which this software is related to.</uiTip>
+										<uiTip>bioagents.tech ID (URL) of an existing bioagents.tech entry which this software is related to.</uiTip>
 									</xs:appinfo>
 								</xs:annotation>
 							</xs:element>
@@ -1919,7 +1919,7 @@
 												</enumItem>
 												<enumItem>
 													<term>Documentor</term>
-													<uiTip>Author of software documentation including making edits to a bio.agents entry.</uiTip>
+													<uiTip>Author of software documentation including making edits to a bioagents.tech entry.</uiTip>
 												</enumItem>
 												<enumItem>
 													<term>Contributor</term>
@@ -2208,14 +2208,14 @@ Line feeds, carriage returns, tabs, leading and trailing spaces, and multiple sp
 	</xs:element>
 	<xs:simpleType name="bioagentsIdType">
 		<xs:annotation>
-			<xs:documentation>bio.agents agent ID.</xs:documentation>
-			<xs:documentation>bio.agents agent IDs are a URL-safe and Linked-Data-safe derivative of (often identical to) the agent name. Allowed characters are uppercase and lowercase English letters (case insensitive!), decimal digits, hyphen, period, and underscore. Spaces can be preserved as underscore ("_").</xs:documentation>
+			<xs:documentation>bioagents.tech agent ID.</xs:documentation>
+			<xs:documentation>bioagents.tech agent IDs are a URL-safe and Linked-Data-safe derivative of (often identical to) the agent name. Allowed characters are uppercase and lowercase English letters (case insensitive!), decimal digits, hyphen, period, and underscore. Spaces can be preserved as underscore ("_").</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
 					<altova:example value="needle"/>
 				</altova:exampleValues>
 			</xs:appinfo>
-			<xs:documentation>bio.agents agent IDs are set by bio.agents admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bio.agents API.</xs:documentation>
+			<xs:documentation>bioagents.tech agent IDs are set by bioagents.tech admin and will be disregarded if specified in a payload (e.g. PUSH, POST) to the bioagents.tech API.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
 			<xs:pattern value="[_\-.0-9a-zA-Z]*"/>

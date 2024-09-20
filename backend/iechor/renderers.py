@@ -53,17 +53,17 @@ class XMLSchemaRenderer(BaseRenderer):
             xmlfile = "multiple.xslt"
         else:
             # deal with a single agent
-            xmlfile = "framework_XML_to_bioagentsSchema_3.3.0_XML_xslt1.0.xslt"
+            xmlfile = "framework_XML_to_bioagents-schema_3.3.0_XML_xslt1.0.xslt"
 
         try:
             parser = lxmletree.XMLParser(ns_clean=True, recover=True, encoding="utf-8")
             dom = lxmletree.fromstring(generic_xml, parser=parser)
-            xslt1 = lxmletree.parse(curr_dir + "/bioagentsSchema/" + xmlfile)
+            xslt1 = lxmletree.parse(curr_dir + "/bioagents-schema/" + xmlfile)
             transform1 = lxmletree.XSLT(xslt1)
             newdom = transform1(dom)
 
             # removing empty elements
-            xslt2 = lxmletree.parse(curr_dir + "/bioagentsSchema/removeEmptyElements.xslt")
+            xslt2 = lxmletree.parse(curr_dir + "/bioagents-schema/removeEmptyElements.xslt")
             transform2 = lxmletree.XSLT(xslt2)
             newdom2 = transform2(newdom)
 

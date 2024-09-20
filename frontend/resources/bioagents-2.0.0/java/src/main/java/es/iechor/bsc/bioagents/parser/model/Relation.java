@@ -42,7 +42,7 @@ public class Relation {
     private SoftwareRelationType type;
 
     @XmlElement(required = true)
-    @XmlSchemaType(name = "bioagentsIdType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "bioagentsIdType", namespace = "http://bioagents.tech")
     public String getBioagentsId() {
         return bioagentsId;
     }

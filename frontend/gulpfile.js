@@ -71,7 +71,7 @@ gulp.task('bower', function() {
 		'bower_components/angular-ui-router/release/angular-ui-router.min.js',
 		'bower_components/angular-tree-control/angular-tree-control.js',
 		'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-		'bower_components/angular-agenttips/dist/angular-agenttips.min.js',
+		'bower_components/angular-tooltips/dist/angular-tooltips.min.js',
 		'bower_components/angular-timeago/dist/angular-timeago.min.js',
 		'bower_components/angular-bindonce/bindonce.min.js',
 		'bower_components/angular-ui-grid/ui-grid.min.js',
@@ -91,7 +91,7 @@ gulp.task('bower', function() {
 		'bower_components/font-awesome/css/font-awesome.min.css',
 		'bower_components/angular-tree-control/css/tree-control.css',
 		'bower_components/angular-tree-control/css/tree-control-attribute.css',
-		'bower_components/angular-agenttips/dist/angular-agenttips.min.css',
+		'bower_components/angular-tooltips/dist/angular-tooltips.min.css',
 		'bower_components/angular-ui-grid/ui-grid.min.css',
 	])
 	.pipe(plumber())

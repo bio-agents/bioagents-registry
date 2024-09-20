@@ -52,7 +52,7 @@ public class Download {
     private String cmd;
     
     @XmlElement(name = "url")
-    @XmlSchemaType(name = "urlftpType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "urlftpType", namespace = "http://bioagents.tech")
     public String getUrlFtpType() {
         return url;
     }
@@ -70,7 +70,7 @@ public class Download {
         this.type = type;
     }
     
-    @XmlSchemaType(name = "textType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "textType", namespace = "http://bioagents.tech")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     public String getComment() {
         return comment;
@@ -97,7 +97,7 @@ public class Download {
     }
     
     @XmlElement(name = "cmd")
-    @XmlSchemaType(name = "textType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "textType", namespace = "http://bioagents.tech")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     public String getCMD() {
         return cmd;

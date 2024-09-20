@@ -2,7 +2,7 @@ import json
 
 class BioAgentsException(Exception):
     """
-    Logic for bio.agents user and agent related exceptions
+    Logic for bioagents.tech user and agent related exceptions
     """
     def __init__(self, username, agent, message):
         super(Exception, self).__init__()

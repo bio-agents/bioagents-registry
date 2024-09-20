@@ -79,7 +79,7 @@ public class Endpoint {
         this.output = output;
     }
 
-    @XmlSchemaType(name = "textType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "textType", namespace = "http://bioagents.tech")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     public String getSummary() {
         return summary;

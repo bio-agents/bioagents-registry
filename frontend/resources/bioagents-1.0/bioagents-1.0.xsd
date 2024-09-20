@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2015 sp2 (x64) (http://www.altova.com) by Jon Ison (private) -->
-<xs:schema xmlns="http://bioagentsregistry.org" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="http://bioagentsregistry.org" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns="http://bioagents-registry.org" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="http://bioagents-registry.org" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:complexType name="OntologyTerm">
 		<xs:annotation>
 			<xs:documentation>Ontology concept term + URI, , or any tag</xs:documentation>
@@ -874,13 +874,13 @@
 			<xs:documentation>URL in the registry namespace</xs:documentation>
 			<xs:appinfo>
 				<altova:exampleValues>
-					<altova:example value="http://bioagentsregistry.org/collectionName_ID"/>
+					<altova:example value="http://bioagents-registry.org/collectionName_ID"/>
 				</altova:exampleValues>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:anyURI">
-			<xs:pattern value="http://bioagentsregistry.org/.*"/>
-			<xs:pattern value="http://bioagentsregistry.net/.*"/>
+			<xs:pattern value="http://bioagents-registry.org/.*"/>
+			<xs:pattern value="http://bioagents-registry.net/.*"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Text">

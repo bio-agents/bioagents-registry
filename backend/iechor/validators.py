@@ -298,4 +298,4 @@ class OntologyValidator():
 def is_blacklisted_url_validator(url):
 	for blacklisted_url in settings.BLACKLISTED_DOMAINS_LIST:
 		if blacklisted_url.lower() in url.lower():
-			raise serializers.ValidationError('This URL domain is blacklisted. Contact help@bio.agents for more details.')
+			raise serializers.ValidationError('This URL domain is blacklisted. Contact help@bioagents.tech for more details.')

@@ -58,7 +58,7 @@ public class Summary {
     protected List<String> socialMedias;
 
     @XmlElement(required = true)
-    @XmlSchemaType(name = "nameType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "nameType", namespace = "http://bioagents.tech")
     public String getName() {
         return name;
     }
@@ -77,7 +77,7 @@ public class Summary {
     }
 
     @XmlElement(required = true)
-    @XmlSchemaType(name = "bioagentsIdType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "bioagentsIdType", namespace = "http://bioagents.tech")
     public String getAgentID() {
         return agentID;
     }
@@ -87,7 +87,7 @@ public class Summary {
     }
 
     @XmlElement(required = true)
-    @XmlSchemaType(name = "doiType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "doiType", namespace = "http://bioagents.tech")
     public String getDoi() {
         return doi;
     }
@@ -104,7 +104,7 @@ public class Summary {
         this.shortDescription = shortDescription;
     }
 
-    @XmlSchemaType(name = "textType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "textType", namespace = "http://bioagents.tech")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     public String getDescription() {
         return description;
@@ -115,7 +115,7 @@ public class Summary {
     }
 
     @XmlElement(required = true)
-    @XmlSchemaType(name = "urlType", namespace = "http://bio.agents")
+    @XmlSchemaType(name = "urlType", namespace = "http://bioagents.tech")
     public String getHomepage() {
         return homepage;
     }
