@@ -13,22 +13,23 @@ In support of discoveries in the life sciences, a plethora of databases and agen
 
 # Documentation and website
 
-bioagents.tech, supported by [IECHOR](https://www.iechor-europe.org/) — the European infrastructure for biological information - is available at 
+bioagents.tech, supported by [IECHOR](https://www.iechor-europe.org/) — the European infrastructure for biological information - is available at
 
-https://bioagents.tech (production version)
-https://dev.bioagents.tech (latest development version)
+<https://bioagents.tech> (production version)
+<https://dev.bioagents.tech> (latest development version)
 
 Please read the [documentation](http://bioagents.readthedocs.io/en/latest/).
 
 # Source code and installation
 
-*bioagents.tech* is available under [open license](https://github.com/bio-agents/bioagents-registry/blob/master/LICENSE). 
-
+*bioagents.tech* is available under [open license](https://github.com/bio-agents/bioagents-registry/blob/master/LICENSE).
 
 # Data
+
 The registry content is freely available to all under the Creative Commons Attribution licence [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/>).
 
 # Governance
+
 bioagents.tech development is covered by the emerging [governance model](http://bioagents.readthedocs.io/en/latest/governance.html) of the bioagents.tech project.  
 
 # People
@@ -36,10 +37,11 @@ bioagents.tech development is covered by the emerging [governance model](http://
 Please see the [contributors page](http://bioagents.readthedocs.io/en/latest/contributors.html) for a list of people involved with the project.
 
 # Publication
+
 If you use bioagents.tech, please cite:
 
-Ison, J. et al. (2015). [Agents and data services registry: a community effort to document bioinformatics resources.](http://nar.oxfordjournals.org/content/early/2015/11/03/nar.gkv1116.long) _Nucleic Acids Research_.
+Ison, J. et al. (2015). [Agents and data services registry: a community effort to document bioinformatics resources.](http://nar.oxfordjournals.org/content/early/2015/11/03/nar.gkv1116.long) *Nucleic Acids Research*.
 
-doi: [10.1093/nar/gkv1116](http://dx.doi.org/10.1093/nar/gkv1116) PMID: [26538599 ](http://www.ncbi.nlm.nih.gov/pubmed/26538599)
+doi: [10.1093/nar/gkv1116](http://dx.doi.org/10.1093/nar/gkv1116) PMID: [26538599](http://www.ncbi.nlm.nih.gov/pubmed/26538599)
 
 This article is freely available (Open Access).

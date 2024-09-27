@@ -102,14 +102,14 @@ INSTALLED_APPS = (
 
 
 MIDDLEWARE_CLASSES = (
-#     'django.contrib.sessions.middleware.SessionMiddleware',
-#     'django.middleware.common.CommonMiddleware',
-#     'django.middleware.csrf.CsrfViewMiddleware',
-#     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-#     'django.contrib.messages.middleware.MessageMiddleware',
-#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-#     'django.middleware.security.SecurityMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
 )
 
 MIDDLEWARE = (
@@ -157,24 +157,24 @@ SITE_ID = getenv('SITE_ID', 1, castf=int)
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-       'default':{
-                'ENGINE':'django.db.backends.mysql',
-                'HOST': getenv('MYSQL_HOST', '127.0.0.1'),
-                'PORT': getenv('MYSQL_PORT', '3306'),
-                'NAME': getenv('MYSQL_DB', 'iechor'),
-                'USER': getenv('MYSQL_USER', 'iechor'),
-                'PASSWORD': getenv('MYSQL_PASSWORD', '123'),
-                # 'TEST': {
-                #     'CHARSET': 'utf8'
-                # },
-                'OPTIONS': {
-                    'charset': 'utf8mb4' 
-                }
-       }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': getenv('MYSQL_HOST', '127.0.0.1'),
+        'PORT': getenv('MYSQL_PORT', '3306'),
+        'NAME': getenv('MYSQL_DB', 'iechor'),
+        'USER': getenv('MYSQL_USER', 'iechor'),
+        'PASSWORD': getenv('MYSQL_PASSWORD', '123'),
+        # 'TEST': {
+        #     'CHARSET': 'utf8'
+        # },
+        'OPTIONS': {
+            'charset': 'utf8mb4'
+        }
+    }
 }
 
 # We change the collation in the first migration file '0001_initial'
-# this allows for text differences like 'o' != 'ø', by default these are not differente they are treated as the same character and 'o' == 'ø' 
+# this allows for text differences like 'o' != 'ø', by default these are not differente they are treated as the same character and 'o' == 'ø'
 # we also define the wrong collation which is used by default so we can reverse migrations in case we need it for any reason
 # this applies to MySQL, don't know if it applies to PostgreSQL which we should eventually use
 DB_COLLATION = {
@@ -183,12 +183,12 @@ DB_COLLATION = {
 }
 
 # Gmail Mail settings (don't usually work because Gmail requires extra security)
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = ''
-# EMAIL_HOST_PASSWORD = ''
-# EMAIL_USE_TLS = True
-# DEFAULT_FROM_EMAIL = 'no-reply@local-bioagents.tech'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'joy66777@gmail.com'
+EMAIL_HOST_PASSWORD = '4303159aA'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'joy66777@gmail.com'
 
 # Zoho Mail works (create an account)
 # EMAIL_HOST = 'smtp.zoho.com'
@@ -198,11 +198,11 @@ DB_COLLATION = {
 # EMAIL_HOST_PASSWORD = ''
 # DEFAULT_FROM_EMAIL = 'no-reply@local-bioagents.tech'
 
-EMAIL_HOST = getenv('EMAIL_HOST', 'smtp.zoho.com')
-EMAIL_PORT = getenv('EMAIL_PORT', 465, castf=int)
-EMAIL_USE_SSL = getenv('EMAIL_USE_SSL', True, castf=bool)
-EMAIL_HOST_USER = getenv('EMAIL_HOST_USER', 'support@bioagents.tech')
-DEFAULT_FROM_EMAIL = getenv('DEFAULT_FROM_EMAIL', 'support@bioagents.tech')
+# EMAIL_HOST = getenv('EMAIL_HOST', 'smtp.zoho.com')
+# EMAIL_PORT = getenv('EMAIL_PORT', 465, castf=int)
+# EMAIL_USE_SSL = getenv('EMAIL_USE_SSL', True, castf=bool)
+# EMAIL_HOST_USER = getenv('EMAIL_HOST_USER', 'support@bioagents.tech')
+# DEFAULT_FROM_EMAIL = getenv('DEFAULT_FROM_EMAIL', 'support@bioagents.tech')
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -230,23 +230,23 @@ STATIC_URL = getenv('STATIC_URL', '/static/')
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
-        # 'rest_framework.authentication.SessionAuthentication',
-        # 'rest_framework.authentication.BasicAuthentication',
-        # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     ),
     'DEFAULT_PARSER_CLASSES': (
         'rest_framework.parsers.JSONParser',
-        #'rest_frameworkework_xml.parsers.XMLParser',
+        'rest_frameworkework_xml.parsers.XMLParser',
         'rest_framework_yaml.parsers.YAMLParser',
-         'iechor.parsers.XMLSchemaParser'
+        'iechor.parsers.XMLSchemaParser'
     ),
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
-        # 'rest_framework.renderers.AdminRenderer',
+        'rest_framework.renderers.AdminRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
         'rest_framework_xml.renderers.XMLRenderer',
         'rest_framework_yaml.renderers.YAMLRenderer',
-        #'iechor.renderers.XMLSchemaRenderer',
+        'iechor.renderers.XMLSchemaRenderer',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': getenv('PAGE_SIZE', 10, castf=int),
@@ -294,7 +294,8 @@ URL_FRONT = getenv('URL_FRONT', 'http://localhost:8000/')
 # NOTE: This setting is currently overwritten by deployment_settings import
 DEPLOYMENT = getenv('DEPLOYMENT', 'dev')
 
-RESERVED_URL_KEYWORDS = ['t', 'agent', 'user-list', 'edit-permissions', 'validate', 'f', 'function', 'o', 'ontology', 'used-terms', 'stats', 'env', 'sitemap.xml', 'd', 'domain', 'request', 'agent-list', 'w', 'register', 'edit-subdomain', 'subdomain', 'login', 'signup', 'reset-password', 'profile', 'requests', 'workflows', '404', 'documentation', 'about', 'schema', 'governance', 'roadmap', 'events', 'mail', 'faq', 'apidoc', 'changelog', 'helpdesk', 'projects']
+RESERVED_URL_KEYWORDS = ['t', 'agent', 'user-list', 'edit-permissions', 'validate', 'f', 'function', 'o', 'ontology', 'used-terms', 'stats', 'env', 'sitemap.xml', 'd', 'domain', 'request', 'agent-list', 'w', 'register', 'edit-subdomain',
+                        'subdomain', 'login', 'signup', 'reset-password', 'profile', 'requests', 'workflows', '404', 'documentation', 'about', 'schema', 'governance', 'roadmap', 'events', 'mail', 'faq', 'apidoc', 'changelog', 'helpdesk', 'projects']
 
 
 # Settings for Github Ecosystem
@@ -306,15 +307,15 @@ ADMIN_EMAIL_LIST = getenv('ADMIN_EMAIL_LIST', [], castf=json.loads)
 try:
     from iechorapp.deployment_settings import *
 except ImportError:
-    print ("Could not import deployment settings")
-
+    print("Could not import deployment settings")
 
 
 # settings for blacklisted domains
-BLACKLISTED_DOMAINS_LIST = getenv('BLACKLISTED_DOMAINS_LIST', [], castf=json.loads)
+BLACKLISTED_DOMAINS_LIST = getenv(
+    'BLACKLISTED_DOMAINS_LIST', [], castf=json.loads)
 
 # settings blacklisting
 try:
     from iechor.blacklisted_domains import *
 except ImportError:
-    print ("Could not import deployment settings")
+    print("Could not import deployment settings")
